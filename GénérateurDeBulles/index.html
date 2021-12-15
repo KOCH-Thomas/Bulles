@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./dist/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .bubble {
+            position: absolute;
+            border-radius: 300px;
+            background: red;
+            opacity: 0;
+            animation: animation 8s forwards;
+            filter: hue-rotate(0deg);
+            cursor: crosshair;
+          }
+          @keyframes animation {
+              to {
+                  top: -250px;
+                  left: var(--left);
+                  opacity: 1;
+                  filter: hue-rotate(720deg)
+              }
+
+            }
+        }
+      </style>
+    <title>Bubbles</title>
+</head>
+<body class="overflow-hidden min-h-screen">
+    <div>
+        <h1 id="counterDisplay" class="font-serif text-8xl text-center text-gray-400 mt-4">0</h1>
+        <audio id="audioclick" src="./src/Click.mp3"></audio>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
